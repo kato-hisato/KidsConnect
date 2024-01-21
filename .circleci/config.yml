@@ -15,7 +15,6 @@ jobs:
           name: Run RSpec
           command: bundle exec rspec
 
-
   rubocop:
     working_directory: ~/kidsconnect
     machine: true
@@ -42,14 +41,13 @@ jobs:
           command: |
             heroku run bin/rails db:migrate -a $HEROKU_APP_NAME
 
-  workflows:
-    version: 2.1
-    build:
-      jobs:
-        - rspec
-        - rubocop
-        - heroku_deploy:
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - rspec
+      - rubocop
+      - heroku_deploy:
           requires:
             - rspec
             - rubocop
-
