@@ -14,8 +14,7 @@ jobs:
       - run:
           name: Run RSpec
           command: bundle exec rspec
-          jobs:
-  
+
 
   rubocop:
     working_directory: ~/kidsconnect
