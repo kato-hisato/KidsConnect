@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   ruby: circleci/ruby@2.0.1
+  heroku: circleci/heroku@2.0
 
 jobs:
   rspec:
